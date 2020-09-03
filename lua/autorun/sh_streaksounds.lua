@@ -11,9 +11,9 @@ streaks = {}
 
 hook.Add("Initialize", "PK_InitializeStreakSounds2", function()
 	for k,v in pairs(streaks) do
-		util.PrecacheSound(v.sound)
+		util.PrecacheSound("sound/" .. v.sound)
 		if SERVER then
-			resource.AddFile(v.sound)
+			resource.AddFile("sound/" .. v.sound)
 			print("Adding resource: " .. v.sound)
 		end
 	end
